@@ -7,6 +7,7 @@ function ClickCounter() {
   };
   return (
     <>
+      <h1>I am Click Counter</h1>
       <h1 onClick={handleChange}>Click Me!</h1>
       <h3>Clicked {count} Times</h3>
     </>

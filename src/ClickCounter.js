@@ -1,16 +1,13 @@
-import { useState } from "react";
+import getCounterHOC from "./HighOrderCounter";
 
-function ClickCounter() {
-  const [count, setCount] = useState(0);
-  const handleChange = () => {
-    setCount(count + 1);
-  };
+function ClickCounter(props) {
+  const { increment, count } = props;
   return (
     <>
       <h1>I am Click Counter</h1>
-      <h1 onClick={handleChange}>Click Me!</h1>
-      <h3>Clicked {count} Times</h3>
+      <h1 onClick={increment}>Click Me!</h1>
+      <h3>You clicked me {count} times.</h3>
     </>
   );
 }
-export default ClickCounter;
+export default getCounterHOC(ClickCounter);

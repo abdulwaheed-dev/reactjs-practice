@@ -1,16 +1,12 @@
-import { useState } from "react";
+import getCounterHOC from "./HighOrderCounter";
 
-function MouseHoverCounter() {
-  const [count, setCount] = useState(0);
-  const handleChange = () => {
-    setCount(count + 1);
-  };
+function MouseHoverCounter({ increment, count }) {
   return (
     <>
       <h1>I am Mouse Hover Counter</h1>
-      <h2 onMouseEnter={handleChange}>Hover me to increase counter</h2>
-      <h3>Hover {count} times</h3>
+      <h2 onMouseEnter={increment}>Hover me to increase counter</h2>
+      <h3>You hovered me {count} times</h3>
     </>
   );
 }
-export default MouseHoverCounter;
+export default getCounterHOC(MouseHoverCounter);

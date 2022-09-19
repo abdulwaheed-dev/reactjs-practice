@@ -17,7 +17,7 @@ function KeyPressCounter() {
         name="counter"
         placeholder="Type something to count keys"
       />
-      <h3>Total Keys Pressed: {count} </h3>
+      <h3>You pressed keyboard keys {count} times</h3>
     </>
   );
 }

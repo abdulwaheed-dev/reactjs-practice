@@ -1,7 +1,8 @@
 import "antd/dist/antd.css";
 import ComponentA from "./ComponentA";
-import { StudentProvider } from "./UserContext";
+import { StudentConsumer, StudentProvider } from "./UserContext";
 import { FacultyProvider } from "./FacultyContext";
+import ComponentD from "./ComponentD";
 // import ClickCounter from "./ClickCounter";
 // import KeyPressCounter from "./KeyPressCounter";
 // import MouseHoverCounter from "./MouseHoverCounter";
@@ -13,10 +14,10 @@ function App() {
   const name = "Khalid Dheto";
   return (
     <div>
-      <h1>Hello World</h1>
       <StudentProvider value={user}>
         <FacultyProvider value={name}>
           <ComponentA />
+          <ComponentD />
         </FacultyProvider>
       </StudentProvider>
       {/* <ComponentA /> */}

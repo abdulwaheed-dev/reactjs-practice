@@ -3,7 +3,8 @@ import "antd/dist/antd.css";
 // import { StudentConsumer, StudentProvider } from "./UserContext";
 // import { FacultyProvider } from "./FacultyContext";
 // import ComponentD from "./ComponentD";
-import Counter from "./Counter";
+//import Counter from "./Counter";
+import ReducerExample from "./ReducerExample";
 // import ClickCounter from "./ClickCounter";
 // import KeyPressCounter from "./KeyPressCounter";
 // import MouseHoverCounter from "./MouseHoverCounter";
@@ -15,7 +16,8 @@ function App() {
   // const name = "Khalid Dheto";
   return (
     <div>
-      <Counter />
+      {/* <Counter /> */}
+      <ReducerExample />
       {/* <StudentProvider value={user}>
         <FacultyProvider value={name}>
           <ComponentA />

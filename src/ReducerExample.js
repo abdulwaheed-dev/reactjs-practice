@@ -34,9 +34,6 @@ function ReducerExample() {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
 
-  // console.log("state");
-  // console.log(state);
-
   return (
     <div>
       <h3 className="space">UseReducer Example</h3>
@@ -78,8 +75,7 @@ function ReducerExample() {
       </Button>
       <br />
       <span className="space">
-        {" "}
-        Products: <br />
+        Products:
         <ul className="space">
           {state.map(({ name, price }) => {
             return (

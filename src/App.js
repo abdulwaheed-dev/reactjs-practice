@@ -1,11 +1,14 @@
 import "antd/dist/antd.css";
-import Counter from "./redux/Counter";
+//import Counter from "./redux/Counter";
+import TestComp from "./ClassTask/TestComp";
 
 function App() {
   return (
     <div>
-      <h1>Lets Learn Redux </h1>
-      <Counter />
+      <TestComp />
+
+      {/* <h1>Lets Learn Redux </h1>
+      <Counter /> */}
     </div>
   );
 }

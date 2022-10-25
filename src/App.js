@@ -1,14 +1,24 @@
 import "antd/dist/antd.css";
-//import Counter from "./redux/Counter";
 import TestComp from "./ClassTask/TestComp";
 
 function App() {
+  const objArr = [
+    { name: "A" },
+    { name: "B", child: [{ name: "X" }, { name: "Y" }] },
+    { name: "C" },
+    {
+      name: "D",
+      child: [
+        {
+          name: "Z",
+          child: [{ name: "K", child: [{ name: "P" }, { name: "Q" }] }],
+        },
+      ],
+    },
+  ];
   return (
     <div>
-      <TestComp />
-
-      {/* <h1>Lets Learn Redux </h1>
-      <Counter /> */}
+      <TestComp objArray={objArr} />
     </div>
   );
 }

@@ -89,11 +89,24 @@ const aboutPage = fs.readFileSync("about.html");
 const express = require("express");
 const path = require("path");
 const app = express();
+const ejs = require("ejs");
+//==========================================
+//middleware
+//mvc == middleware , views , controllers == mvc model
+// we use middleware here, either our own made middleware or thirdparty middleware..
+app.use(express.static("public")); //to access static sources in html, we will add those folders in public folder
+app.set("view engine", "ejs");
+//----------------------------------------
+//template engines = for server side rendering..
+// namely: ejs and pug
 app.get("/about", function (req, res) {
   //res.send({ name: "waheed" });
   //res.json({ name: "waheed" });
-  res.sendFile(path.resolve(__dirname, "about.html"));
+  //res.sendFile(path.resolve(__dirname, "about.html"));
+  res.render("about", { name: "Waheed" });
 });
+
+//mongodb , schemaless db, collections, documents
 
 app.listen(process.env.PORT, function () {
   console.log("Express listening on Port - " + process.env.PORT);

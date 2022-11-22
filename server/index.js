@@ -49,7 +49,7 @@
 require("dotenv").config();
 const http = require("http");
 const fs = require("fs");
-const aboutPage = fs.readFileSync("about.html");
+//const aboutPage = fs.readFileSync("about.html");
 // const server = http.createServer(function (req, res) {
 //   //console.log(req);
 //   if (req.url === "/products") {
@@ -99,11 +99,20 @@ app.set("view engine", "ejs");
 //----------------------------------------
 //template engines = for server side rendering..
 // namely: ejs and pug
-app.get("/about", function (req, res) {
+app.get("/home", function (req, res) {
   //res.send({ name: "waheed" });
   //res.json({ name: "waheed" });
   //res.sendFile(path.resolve(__dirname, "about.html"));
-  res.render("about", { name: "Waheed" });
+  res.render("home", { name: "Waheed" });
+});
+
+app.get("/about", function (req, res) {
+  res.render("about");
+});
+
+app.get("/products", function (req, res) {
+  const products = ["Apple", "Samsung", "Oppo", "Vivo", "Sony"];
+  res.render("products", { products });
 });
 
 //mongodb , schemaless db, collections, documents
@@ -111,3 +120,6 @@ app.get("/about", function (req, res) {
 app.listen(process.env.PORT, function () {
   console.log("Express listening on Port - " + process.env.PORT);
 });
+
+//mongodb installation
+//mongodb aggregation //important to study, very useful

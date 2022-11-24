@@ -90,6 +90,11 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const ejs = require("ejs");
+const mongoose = require("mongoose");
+//===================================
+mongoose.connect("mongodb://127.0.0.1/27017/db-name", {
+  useNewUrlParser: true,
+});
 //==========================================
 //middleware
 //mvc == middleware , views , controllers == mvc model

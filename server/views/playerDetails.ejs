@@ -1,0 +1,11 @@
+<%-include('./layouts/navbar')%> <% const {_id, name, country, role, score,
+playerType } = player; %>
+
+<h1>Welcome to <%=name%>'s Profile</h1>
+<h3>Name: <%=name%></h3>
+<h3>Country: <%=country%></h3>
+<h3>Role: <%=role%></h3>
+<h3>Score: <%=score%></h3>
+<h3>Type: <%=playerType%></h3>
+
+<%-include('./layouts/footer')%>

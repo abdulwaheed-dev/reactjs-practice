@@ -91,16 +91,21 @@ const path = require("path");
 const app = express();
 const ejs = require("ejs");
 const mongoose = require("mongoose");
+const Player = require("./models/Player");
+//const bodyparser = require("body-parser");
+const playerValidateMiddleware = require("./middleware/playerDataValidation");
+
 //===================================
-mongoose.connect("mongodb://127.0.0.1/27017/db-name", {
-  useNewUrlParser: true,
-});
+mongoose.connect("mongodb://127.0.0.1:27017/players-db");
+
 //==========================================
 //middleware
 //mvc == middleware , views , controllers == mvc model
 // we use middleware here, either our own made middleware or thirdparty middleware..
 app.use(express.static("public")); //to access static sources in html, we will add those folders in public folder
 app.set("view engine", "ejs");
+app.use(express.urlencoded()); //for express version > 4.16
+//app.use(bodyparser.json()); //for < 4.16
 //----------------------------------------
 //template engines = for server side rendering..
 // namely: ejs and pug
@@ -118,6 +123,38 @@ app.get("/about", function (req, res) {
 app.get("/products", function (req, res) {
   const products = ["Apple", "Samsung", "Oppo", "Vivo", "Sony"];
   res.render("products", { products });
+});
+
+app.get("/players", function (req, res) {
+  const players = Player.find({});
+  console.log("=============================");
+  console.log({ players });
+  console.log("=============================");
+  res.render("player", { players });
+});
+
+app.get("/player/:id", async function (req, res) {
+  console.log(req.params.id);
+  const player = await Player.findById(req.params.id);
+  console.log("===============================");
+  console.log(player);
+  res.render("playerDetails", { player });
+});
+
+app.get("/player/create", playerValidateMiddleware, function (req, res) {
+  //const players = Player.find({});
+  //console.log(players);
+  console.log("Data=>" + res.body);
+  Player.create(res.body, function (err, result) {
+    if (!err) {
+      res.redirect("/player");
+    }
+    console.log(err);
+  });
+});
+
+app.get("/player/new", async function (req, res) {
+  res.render("./layouts/newPlayer");
 });
 
 //mongodb , schemaless db, collections, documents

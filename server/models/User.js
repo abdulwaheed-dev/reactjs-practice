@@ -2,7 +2,7 @@ const { model, Schema } = require("mongoose");
 const bcrypt = require("bcrypt");
 
 const UserSchema = new Schema({
-  name: String,
+  username: String,
   password: String,
   age: Number,
 });
@@ -15,6 +15,6 @@ UserSchema.pre("save", function (next) {
   });
 });
 
-const User = model("User", UserSchema);
+const User = model("User", UserSchema, "User");
 
 module.exports = User;

@@ -1,4 +1,4 @@
-const { model, Schema } = require("mongoose");
+const { Schema, model } = require("mongoose");
 
 const PlayerSchema = new Schema({
   name: String,
@@ -7,8 +7,12 @@ const PlayerSchema = new Schema({
   role: String,
   score: Number,
   ranking: Number,
+  createdOn: {
+    type: Date,
+    default: new Date(),
+  },
 });
 
-const Player = model("User", PlayerSchema);
+const Player = model("Player", PlayerSchema, "Player");
 
 module.exports = Player;

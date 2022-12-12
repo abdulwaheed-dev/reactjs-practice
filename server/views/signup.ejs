@@ -1,0 +1,23 @@
+<%-include('./layouts/navbar')%>
+
+<h3>New Player Signup</h3>
+
+<div>
+  <form action="/createUser" method="POST">
+    <div>
+      <label>Username:</label>
+      <input type="text" name="username" placeholder="Enter Username" />
+    </div>
+    <div>
+      <label>Password:</label>
+      <input type="password" name="password" placeholder="Enter Password" />
+    </div>
+    <div>
+      <label>Age:</label>
+      <input type="number" name="age" placeholder="Enter Age" />
+    </div>
+    <input type="submit" value="Signup" />
+  </form>
+</div>
+
+<%-include('./layouts/footer')%>

@@ -1,0 +1,19 @@
+<%-include('./layouts/navbar')%>
+
+<h3>Player Signin!</h3>
+
+<div>
+  <form method="POST" action="/authenticate">
+    <div>
+      <label>Username:</label>
+      <input type="text" name="username" placeholder="Enter Username" />
+    </div>
+    <div>
+      <label>Password:</label>
+      <input type="password" name="password" placeholder="Enter Password" />
+    </div>
+    <input type="submit" value="Login" />
+  </form>
+</div>
+
+<%-include('./layouts/footer')%>

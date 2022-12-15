@@ -25,41 +25,15 @@
       <input type="number" name="score" placeholder="Enter data" />
     </div>
     <div>
+      <label>Player Role:</label>
+      <input type="text" name="role" placeholder="Enter data" />
+    </div>
+    <div>
       <label>Player Ranking:</label>
       <input type="number" name="ranking" placeholder="Enter data" />
     </div>
     <input type="submit" value="Save" />
   </form>
+
+  <%-include('./layouts/footer')%>
 </div>
-
-<!-- <h3>Welcome to Player Registeration</h3>
-
-<div>
-  <form method="POST" action="/player/create">
-    <div>
-      <label>Player Name:</label>
-      <input type="text" name="name" placeholder="Your Data" />
-      <br />
-      <label>Player Country:</label>
-      <input type="text" name="country" placeholder="Your Data" />
-      <br />
-      <label>Player Type:</label>
-      <select name="playerType">
-        <option>Bowler</option>
-        <option>Batsman</option>
-        <option>Fielder</option>
-        <option>All Rounder</option>
-      </select>
-      <br />
-      <label>Player Rank:</label>
-      <input type="text" name="ranking" placeholder="Your Data" />
-      <br />
-      <label>Player Score:</label>
-      <input type="text" name="score" placeholder="Your Data" />
-      <br />
-      <input type="submit" value="Save" />
-    </div>
-  </form>
-</div> -->
-
-<%-include('./layouts/footer')%>
